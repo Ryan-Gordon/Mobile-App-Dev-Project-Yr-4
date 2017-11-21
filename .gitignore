@@ -1,0 +1,8 @@
+
+*.dll
+
+
+CryptoFolio/bin
+CryptoFolio/CryptoFolio/bin/*
+CryptoFolio/bin
+CryptoFolio/CryptoFolio/obj/*
