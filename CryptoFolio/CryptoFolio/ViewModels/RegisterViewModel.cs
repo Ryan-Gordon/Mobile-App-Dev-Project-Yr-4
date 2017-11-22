@@ -50,7 +50,63 @@ namespace CryptoFolio.ViewModels
         /// <returns>Boolean</returns>
         public async Task<Boolean> createUser(String username, String pass)
         {
-            
+            string _id = "org.couchdb.user:";
+
+            try
+            {
+                // connect to _session endpoint
+                using (var client = new MyCouchClient("http://admincouch:supersecret123@couchaccountservice.westeurope.cloudapp.azure.com:5984", "_users"))
+                {
+                    //create a new json object we can post to couch endpoint
+                    var json = new JObject();
+
+                    json.Add("_id", _id + username);
+                    json.Add("name", username);
+                    json.Add("password",pass);
+                    json.Add("roles", new JArray());
+                    json.Add("type", "user");
+
+
+
+                    // send post to CouchDB to create user and use result to decide how to proceed
+                    var result = await client.Documents.PostAsync(json.ToString());
+
+                    System.Diagnostics.Debug.WriteLine(StringToHex(username));
+                    System.Diagnostics.Debug.WriteLine(StringToHex("Hello world"));
+                    System.Diagnostics.Debug.WriteLine(json);
+
+                    //Debug the result
+                    //TODO: remove in prod
+                    System.Diagnostics.Debug.WriteLine("Results: " + result.IsSuccess);
+                    System.Diagnostics.Debug.WriteLine("Error: " + result.Error);
+                    System.Diagnostics.Debug.WriteLine("Reason: " + result.Reason);
+
+             
+                    // if successful
+                    if (result.IsSuccess)
+                    {
+                        //If we make it here, we have successfully registered the user.Now we will save these details to localStorage
+                        var localSettings = ApplicationData.Current.LocalSettings;
+
+                        localSettings.Values["CurrentUsername"] = username;                    
+                        localSettings.Values["CurrentUserpassword"] = pass;
+                        //return value to the view
+                        return true;
+                    }
+                    else
+                    {
+                        //return value to the view 
+                        return false;
+                    } // if
+
+                } // using
+            }
+            //Reaching here indicates some code exception was raised or other non predicted outcome. Log it.
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+                return false;
+            } // try
 
         }
     }
