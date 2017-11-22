@@ -190,9 +190,12 @@ Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac tu
 
 Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</value>
     <comment>First use prompt message body</comment>
-  </data>  
+  </data>
   <data name="FirstRun_Title.Text" xml:space="preserve">
     <value>Welcome</value>
     <comment>First use prompt message title</comment>
+  </data>
+  <data name="Shell_News" xml:space="preserve">
+    <value>News</value>
   </data>
 </root>
