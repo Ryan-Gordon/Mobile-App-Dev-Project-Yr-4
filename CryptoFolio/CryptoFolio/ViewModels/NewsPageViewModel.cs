@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -13,18 +14,41 @@ using Telerik.Core.Data;
 
 namespace CryptoFolio.ViewModels
 {
-    public class NewsPageViewModel : ShellViewModel
+    public class NewsPageViewModel : ShellViewModel, INotifyPropertyChanged
     {
         private int currentCount = 0;
         public IncrementalLoadingCollection<Article> Months { get; set; }
+      
+        private bool showLoading;
+
+        public bool ShowLoading
+        {
+            get { return showLoading; }
+            set
+            {
+                showLoading = value;
+
+                Set<bool>(() => ShowLoading, ref showLoading, value);
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("ShowLoading"));
+                }
+            }
+        }
+        
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
         public NewsPageViewModel()
         {
             Months = new IncrementalLoadingCollection<Article>(this.GetMoreItems) { BatchSize = 5 };
+            
+            ShowLoading = true;
         }
 
         async Task<HttpResponseMessage> GetGoogle()
         {
-
+             
             HttpClient client = new HttpClient();
 
             Uri uri = new Uri("https://newsapi.org/v2/top-headlines?sources=crypto-coins-news&apiKey=1068e856ce444a8cb981e1b31ced616f");
@@ -50,20 +74,30 @@ namespace CryptoFolio.ViewModels
             {
                 return null;
             }
-            
+            var result = new List<Article>();
             var newsArticles =   await GetGoogle();
             using (var result1 = await GetGoogle())
             {
                 Debug.WriteLine(result1);
-
+                
                 var resultObject = JsonConvert.DeserializeObject(await result1.Content.ReadAsStringAsync());
                 JObject jObject = JObject.Parse(await result1.Content.ReadAsStringAsync());
 
                 foreach (var item in jObject["articles"])
                 {
+
                     Debug.WriteLine(item["title"]);
+                    Debug.WriteLine(item["urlToImage"]);
+                    Article a = new Article();
+                    a.UrlImage = item["urlToImage"].ToString();
+                    var random = new Random(Environment.TickCount);
+                    result.Add(new Article { Label = item["title"].ToString(), Height = random.Next(150, 450), UrlImage = item["urlToImage"].ToString(), url = item["url"].ToString() });
+                    
+
+                    
                 }
-                    Article deserializedObject = JsonConvert.DeserializeObject<Article>(await result1.Content.ReadAsStringAsync());
+                ShowLoading = false;
+                Article deserializedObject = JsonConvert.DeserializeObject<Article>(await result1.Content.ReadAsStringAsync());
 
                 Debug.WriteLine(deserializedObject);
 
@@ -71,11 +105,11 @@ namespace CryptoFolio.ViewModels
 
 
 
-            var random = new Random(Environment.TickCount);
-            var result = Enumerable.Range(this.currentCount, (int)count).Select(x => new Article { Label = "item " + x.ToString(), Height = random.Next(50, 150) }).ToList();
-            currentCount += (int)count;
+             currentCount += (int)count;
             return result;
         }
     }
-}
+
+   
+    }
 

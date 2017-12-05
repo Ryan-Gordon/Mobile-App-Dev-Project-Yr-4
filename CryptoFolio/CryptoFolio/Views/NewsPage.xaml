@@ -65,8 +65,8 @@
                 </telerikPrimitives:RadDataBoundListBox.ItemTemplate>
 
             </telerikPrimitives:RadDataBoundListBox>
+            <primitives:RadBusyIndicator  IsActive="{Binding ShowLoading, Mode=TwoWay}" AnimationStyle="AnimationStyle3" x:Name="indicator"/>
 
-            <primitives:RadBusyIndicator  IsActive="{Binding isLoading}" AnimationStyle="AnimationStyle3" x:Name="indicator"/>
         </Grid>
     </Grid>
 </Page>

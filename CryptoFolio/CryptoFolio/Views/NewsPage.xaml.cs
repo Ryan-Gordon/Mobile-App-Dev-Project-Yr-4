@@ -24,7 +24,7 @@ namespace CryptoFolio.Views
         {
             InitializeComponent();
             NewsPageViewModel vm = new NewsPageViewModel();
-            indicator.IsActive = false;
+            
         }
 
         
