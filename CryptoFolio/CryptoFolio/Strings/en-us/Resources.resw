@@ -198,4 +198,8 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
   <data name="Shell_News" xml:space="preserve">
     <value>News</value>
   </data>
+  <data name="News_Title" xml:space="preserve">
+    <value>News</value>
+    <comment>Navigation view item name for News</comment>
+  </data>
 </root>

@@ -6,38 +6,67 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="using:Telerik.UI.Xaml.Controls.Data"
+    xmlns:primitives="using:Telerik.UI.Xaml.Controls.Primitives"
     DataContext="{Binding NewsPageViewModel, Source={StaticResource Locator}}"
+    Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid
+        x:Name="ContentArea"
+        Margin="{StaticResource MediumLeftRightMargin}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="TitleRow" Height="48"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            x:Name="TitlePage"
+            x:Uid="News_Title"
+            Style="{StaticResource PageTitleStyle}" />
 
 
-        <telerikPrimitives:RadDataBoundListBox x:Name="gridDataBoundListBox" ItemsSource="{Binding Months}">
-            <telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
-                <telerikPrimitives:DynamicGridVirtualizationStrategyDefinition Orientation="Horizontal" StackCount="3"/>
-            </telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
-            <telerikPrimitives:RadDataBoundListBox.ItemTemplate>
-                <DataTemplate>
 
-                    <StackPanel Margin="12,12"
+        <Grid Grid.Row="1"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+            <telerikPrimitives:RadDataBoundListBox x:Name="gridDataBoundListBox" Grid.Row="1" ItemsSource="{Binding Months}">
+                <telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
+                    <telerikPrimitives:DynamicGridVirtualizationStrategyDefinition Orientation="Horizontal" StackCount="3"/>
+
+                </telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
+
+                <telerikPrimitives:RadDataBoundListBox.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <StackPanel Margin="12,12"
                                 PointerPressed="StackPanel_PointerPressed"
                                 Height="{Binding Height}">
-                        
-                        <StackPanel.Background>
-                            <ImageBrush ImageSource="{Binding UrlImage}" />
-                        </StackPanel.Background>
-                        <!--
+
+                            <StackPanel.Background>
+                                <ImageBrush ImageSource="{Binding UrlImage}" />
+                            </StackPanel.Background>
+                            <!--
                         <Image VerticalAlignment="Top"  Width="30" Height="30" Source="{Binding UrlImage}" Name="image1" />
                            -->
-                        <Button Content="" Height="Auto" Width="Auto" Visibility="Collapsed" Name="button0"/>
-
-                        <TextBlock Text="{Binding Label}"
+                            <Button Content="" Height="Auto" Width="Auto" Visibility="Collapsed" Name="button0"/>
+                            <StackPanel VerticalAlignment="Top" Height="75" Opacity="0.7" Background="Black" >
+                                <TextBlock Text="{Binding Label}"
                                    HorizontalAlignment="Center"
-                                   Margin="12,12" />
-                    </StackPanel>
-                </DataTemplate>
-            </telerikPrimitives:RadDataBoundListBox.ItemTemplate>
+                                   Margin="12,12"
+                                   TextWrapping="Wrap"
+                                   Foreground="AntiqueWhite"
+                                   VerticalAlignment="Center"
+                                   />
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </telerikPrimitives:RadDataBoundListBox.ItemTemplate>
 
-        </telerikPrimitives:RadDataBoundListBox>
+            </telerikPrimitives:RadDataBoundListBox>
+
+            <primitives:RadBusyIndicator  IsActive="{Binding isLoading}" AnimationStyle="AnimationStyle3" x:Name="indicator"/>
+        </Grid>
     </Grid>
 </Page>
