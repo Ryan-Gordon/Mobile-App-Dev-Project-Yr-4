@@ -26,6 +26,36 @@
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20 10 20 20">
+
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <!-- Stack Panel for the Username-->
+
+                    <StackPanel Margin="0 0 0 20">
+                        <TextBlock Text="Login" Margin="0 0 0 20" FontSize="28"/>
+                        <TextBlock Text="Username:" Width="400" Height="20" Margin="0 0 0 10"/>
+                        <TextBox x:Name="loginUsernameTextBox" Width="400" Height="20"/>
+                    </StackPanel>
+                    <!-- Stack Panel for the Password-->
+                    <StackPanel>
+                        <TextBlock Text="Password:" Width="400" Height="20" Margin="0 0 0 10" />
+                        <PasswordBox x:Name="loginPasswordTextBox" Width="400" Height="20"/>
+                    </StackPanel>
+
+
+                    <!-- Stack Panel for the Buttons-->
+
+                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+
+                        <Button x:Name="loginBT" Content="Login" Margin="0 0 20 0" Click="loginBT_Click"/>
+                        <Button x:Name="registerBT" Content="Register" Click="registerBT_Click"  />
+                    </StackPanel>
+                    <StackPanel Margin="0 20 0 0">
+                        <TextBlock x:Name="errorTextBlock" Text="" HorizontalAlignment="Center" Foreground="Red"/>
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel>
         </Grid>
         <!--  Adaptive triggers  -->
         <VisualStateManager.VisualStateGroups>
