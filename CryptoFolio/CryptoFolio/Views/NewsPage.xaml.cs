@@ -1,5 +1,8 @@
 ﻿using Windows.UI.Xaml.Controls;
 using CryptoFolio.ViewModels;
+using System;
+using System.Diagnostics;
+using CryptoFolio.Models;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -21,6 +24,17 @@ namespace CryptoFolio.Views
         {
             InitializeComponent();
             NewsPageViewModel vm = new NewsPageViewModel();
+        }
+
+        
+
+        private async void StackPanel_PointerPressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            var sp = sender as StackPanel;
+            Debug.WriteLine(e);
+            Article theValue = sp.DataContext as Article;
+            Debug.WriteLine(theValue);
+            await Windows.System.Launcher.LaunchUriAsync(new Uri(theValue.url));
         }
     }
 }

@@ -18,9 +18,19 @@
             </telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
             <telerikPrimitives:RadDataBoundListBox.ItemTemplate>
                 <DataTemplate>
+
                     <StackPanel Margin="12,12"
-                                Background="Yellow"
+                                PointerPressed="StackPanel_PointerPressed"
                                 Height="{Binding Height}">
+                        
+                        <StackPanel.Background>
+                            <ImageBrush ImageSource="{Binding UrlImage}" />
+                        </StackPanel.Background>
+                        <!--
+                        <Image VerticalAlignment="Top"  Width="30" Height="30" Source="{Binding UrlImage}" Name="image1" />
+                           -->
+                        <Button Content="" Height="Auto" Width="Auto" Visibility="Collapsed" Name="button0"/>
+
                         <TextBlock Text="{Binding Label}"
                                    HorizontalAlignment="Center"
                                    Margin="12,12" />
