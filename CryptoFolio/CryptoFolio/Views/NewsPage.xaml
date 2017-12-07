@@ -32,7 +32,7 @@
 
             <telerikPrimitives:RadDataBoundListBox x:Name="gridDataBoundListBox" Grid.Row="1" ItemsSource="{Binding Months}">
                 <telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
-                    <telerikPrimitives:DynamicGridVirtualizationStrategyDefinition Orientation="Horizontal" StackCount="3"/>
+                    <telerikPrimitives:DynamicGridVirtualizationStrategyDefinition Orientation="Horizontal" StackCount="4"/>
 
                 </telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
 
