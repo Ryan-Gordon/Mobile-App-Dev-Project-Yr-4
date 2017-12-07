@@ -19,12 +19,11 @@ namespace CryptoFolio.ViewModels
 
         public void test()
         {
-            Currency test = CoinMarketCapService.getTicker();
-            Debug.WriteLine(CoinMarketCapService.getTicker());
+            //Currency test = CoinMarketCapService.getTicker();
+            //Debug.WriteLine(CoinMarketCapService.getTicker());
             new Item() { Amount = 0, Coin = Coin.Bitcoin, watchOnly = true, Notes = "First Transaction" };
 
-            Debug.WriteLine(test.Id);
-            Debug.WriteLine(test.PriceUsd);
+           
         }
 
         public ArrayList get_All_Names()
@@ -37,6 +36,21 @@ namespace CryptoFolio.ViewModels
             {
                 Debug.WriteLine(coin.Name);
                 currencyList.Add(coin.Name);
+            }
+
+            return currencyList;
+        }
+
+        public ArrayList get_All_Coins()
+        {
+            //Currency test = CoinMarketCapService.getAll();
+            Debug.WriteLine(CoinMarketCapService.getAll());
+            ArrayList currencyList = new ArrayList();
+
+            foreach (Currency coin in CoinMarketCapService.getAll())
+            {
+                Debug.WriteLine(coin.Name);
+                currencyList.Add(coin);
             }
 
             return currencyList;
