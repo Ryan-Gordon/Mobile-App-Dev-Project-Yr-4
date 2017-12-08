@@ -7,6 +7,20 @@
 
     <Application.Resources>
         <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Default">
+                    <Color x:Key="SystemAccentColor">OrangeRed</Color>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <Color x:Key="SystemAccentColor">DeepPink</Color>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Light">
+                    <Color x:Key="SystemAccentColor">OrangeRed</Color>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+       
+           
+
             <vms:ViewModelLocator x:Key="Locator" />
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Styles/_Colors.xaml"/>

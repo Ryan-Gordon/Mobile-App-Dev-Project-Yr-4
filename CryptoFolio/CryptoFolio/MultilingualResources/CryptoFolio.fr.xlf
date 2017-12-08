@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="fr" original="CRYPTOFOLIO/STRINGS/EN-US/RESOURCES.RESW" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6810.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="CRYPTOFOLIO/STRINGS/EN-US/RESOURCES.RESW" datatype="resx">
+        <trans-unit id="ExceptionNavigationServiceExPageNotFound" translate="yes" xml:space="preserve">
+          <source>Page not found: {0}. Did you forget to call NavigationService.Configure?</source>
+          <target state="new">Page not found: {0}. Did you forget to call NavigationService.Configure?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Page to navigate not found in navigation service</note>
+        </trans-unit>
+        <trans-unit id="ExceptionNavigationServiceExKeyIsInNavigationService" translate="yes" xml:space="preserve">
+          <source>The key {0} is already configured in NavigationService</source>
+          <target state="new">The key {0} is already configured in NavigationService</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">The page is already configured in navigation service</note>
+        </trans-unit>
+        <trans-unit id="ExceptionNavigationServiceExTypeAlreadyConfigured" translate="yes" xml:space="preserve">
+          <source>This type is already configured with key {0}</source>
+          <target state="new">This type is already configured with key {0}</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">The page type is already configured with page key in navigation service</note>
+        </trans-unit>
+        <trans-unit id="ExceptionNavigationServiceExPageUnknow" translate="yes" xml:space="preserve">
+          <source>The page '{0}' is unknown by the NavigationService</source>
+          <target state="new">The page '{0}' is unknown by the NavigationService</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">The page is unknown or not registered in navigation service</note>
+        </trans-unit>
+        <trans-unit id="Main_Title.Text" translate="yes" xml:space="preserve">
+          <source>Main</source>
+          <target state="new">Main</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Page title for Main</note>
+        </trans-unit>
+        <trans-unit id="Shell_Main" translate="yes" xml:space="preserve">
+          <source>Main</source>
+          <target state="new">Main</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Navigation view item name for Main</note>
+        </trans-unit>
+        <trans-unit id="Register_Title.Text" translate="yes" xml:space="preserve">
+          <source>Register</source>
+          <target state="new">Register</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Page title for Register</note>
+        </trans-unit>
+        <trans-unit id="Shell_Register" translate="yes" xml:space="preserve">
+          <source>Register</source>
+          <target state="new">Register</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Navigation view item name for Register</note>
+        </trans-unit>
+        <trans-unit id="Login_Title.Text" translate="yes" xml:space="preserve">
+          <source>Login</source>
+          <target state="new">Login</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Page title for Login</note>
+        </trans-unit>
+        <trans-unit id="Shell_Login" translate="yes" xml:space="preserve">
+          <source>Login</source>
+          <target state="new">Login</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Navigation view item name for Login</note>
+        </trans-unit>
+        <trans-unit id="AddCoin_Title.Text" translate="yes" xml:space="preserve">
+          <source>AddCoin</source>
+          <target state="new">AddCoin</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Page title for AddCoin</note>
+        </trans-unit>
+        <trans-unit id="Shell_AddCoin" translate="yes" xml:space="preserve">
+          <source>AddCoin</source>
+          <target state="new">AddCoin</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Navigation view item name for AddCoin</note>
+        </trans-unit>
+        <trans-unit id="Chart_Title.Text" translate="yes" xml:space="preserve">
+          <source>Chart</source>
+          <target state="new">Chart</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Page title for Chart</note>
+        </trans-unit>
+        <trans-unit id="Shell_Chart" translate="yes" xml:space="preserve">
+          <source>Chart</source>
+          <target state="new">Chart</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Navigation view item name for Chart</note>
+        </trans-unit>
+        <trans-unit id="ExceptionSettingsStorageExtensionsFileNameIsNullOrEmpty" translate="yes" xml:space="preserve">
+          <source>File name is null or empty. Specify a valid file name</source>
+          <target state="new">File name is null or empty. Specify a valid file name</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">File name is null or empty to save file in settings storage extensions</note>
+        </trans-unit>
+        <trans-unit id="FirstRun_Body.Text" translate="yes" xml:space="preserve">
+          <source>Welcome to CryptoFolio.
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+
+Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+
+Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</source>
+          <target state="new">Welcome to CryptoFolio.
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+
+Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+
+Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">First use prompt message body</note>
+        </trans-unit>
+        <trans-unit id="FirstRun_Title.Text" translate="yes" xml:space="preserve">
+          <source>Welcome to CryptoFolio
+This app provides info on CryptoCurrency prices and news.
+
+There are a number of extra features in development such as ICO news and portfolio.</source>
+          <target state="new">Welcome to CryptoFolio
+This app provides info on CryptoCurrency prices and news.
+
+There are a number of extra features in development such as ICO news and portfolio.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">First use prompt message title</note>
+        </trans-unit>
+        <trans-unit id="Shell_News" translate="yes" xml:space="preserve">
+          <source>News</source>
+          <target state="new">News</target>
+        </trans-unit>
+        <trans-unit id="News_Title" translate="yes" xml:space="preserve">
+          <source>News</source>
+          <target state="new">News</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Navigation view item name for News</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
