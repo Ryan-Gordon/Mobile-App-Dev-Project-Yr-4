@@ -10,6 +10,15 @@ namespace CryptoFolio.Models
     {
         public string Label { get; set; }
         public int Height { get; set; }
+        public string author { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
+        public string url { get; set; }
+        public string UrlImage { get; set; }
+
+        public string publishedAt { get; set; }
+
+
 
     }
 }
