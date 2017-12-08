@@ -46,7 +46,7 @@ namespace CryptoFolio.ViewModels
             ShowLoading = true;
         }
 
-        async Task<HttpResponseMessage> GetGoogle()
+        async Task<HttpResponseMessage> GetNews()
         {
              
             HttpClient client = new HttpClient();
@@ -75,8 +75,8 @@ namespace CryptoFolio.ViewModels
                 return null;
             }
             var result = new List<Article>();
-            var newsArticles =   await GetGoogle();
-            using (var result1 = await GetGoogle())
+            var newsArticles =   await GetNews();
+            using (var result1 = await GetNews())
             {
                 Debug.WriteLine(result1);
                 

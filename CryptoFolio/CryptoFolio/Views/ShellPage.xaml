@@ -114,7 +114,8 @@
                 <ic:InvokeCommandAction Command="{x:Bind ViewModel.ItemSelectedCommand}" />
             </ic:EventTriggerBehavior>
         </i:Interaction.Behaviors>
-        <Grid Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
+        <!-- Changing this grids background affects all pages background -->
+        <Grid >
             <Frame x:Name="shellFrame"/>
         </Grid>
         <VisualStateManager.VisualStateGroups>
